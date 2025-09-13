@@ -6,6 +6,7 @@ function ProductCard(Product){
     paddingLeft: "4px",
     paddingRight: "4px"
     }
+    
     return (
         <div style={containerStyle}>
             <p className="title">Productname:{Product.Productname}</p>
