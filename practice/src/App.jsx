@@ -1,76 +1,60 @@
-import UserAvatar from "./UserAvatar.jsx"
-import ProductCard from "./ProductCard.jsx"
-import "./app.css"
-import BlogPost from "./BlogPost.jsx"
-function App() {
-  const name = "Y.SYAMALA SUDHA"
-  const course = "B.Tech(CSE)"
-  const RollNo = "24VV1A0563"
-  const bloodgroup = "O+"
-  const DOB = "12/08/2006"
-  const products = [
+import "./App.css"
+import { useState } from "react"
+function App(){
+  const [count,setCount]=useState(0)
+  const [email,setEmail]=useState("")
+  const [password,setPassword]=useState("")
+  const handleEmail=(event)=>{
+    setEmail(event.target.value)
+
+  }
+  const handlePassword=(event)=>{
+    setPassword(event.target.value)
+
+  }
+  // const handleIncrement=()=>{
+  //   //set(count+1)
+  //   setCount((prevCount)=>prevCount+1)
+  //   console.log(count)
+  // }
+   //const handleClick=(name)=>{
+    // console.log("You clicked the button")
+  // alert("Hello" +name)
+    // alert(`Hello ${name}`)
+  // }
+  const handleChange=(event)=>{
+    // console.log(event.target.name)
+     //console.log(event.target.value)
+setFormData({
+ ...formData,
+  [event.target.name]:event.target.value
+
+})
+   }
+  const handleSubmit=(event)=>{
+     event.preventDefault();
+     alert(`Email:${formData.email}\nPassword:${formData.password}\nYou are Logged in!!`)
+  }
+  const [formData,setFormData]=useState(
     {
-      ProductName: "Product1",
-      ProductPrice: "3000",
-      isavailable: true
-    }, {
-      ProductName: "Product2",
-      ProductPrice: "6000",
-      isavailable: true
-    }, {
-      ProductName: "Product3",
-      ProductPrice: "9000",
-      isavailable: true
-    }, {
-      ProductName: "Product4",
-      ProductPrice: "12000",
-      isavailable: true
+      email:"",
+      password:""
     }
-  ]
-  const post=[
-    { id:1,
-      author:"Syamala",
-      title:"Lion of Judah",
-      description:"Fills fire inside"
-    },{id:2,
-      author:"Syamala",
-      title:"Lion of Judah",
-      description:"Fills fire inside"
-    },{id:3,
-      author:"Syamala",
-      title:"Lion of Judah",
-      description:"Fills fire inside"
-    },{id:4,
-      author:"Syamala",
-      title:"Lion of Judah",
-      description:"Fills fire inside"
-    }
-  ]
-
-
+  )
   return (
-    <div className="maincontainer">
-
-       { <ProductCard Productname="Laptop" Productprice="15000" isavailable={true} />
-      { <ProductCard Productname="Laptop" Productprice="15000" isavailable={false} /> }
-      <UserAvatar Name={name} course={course} RollNo={RollNo} bloodgroup={bloodgroup} DOB={DOB}/> 
-
-      {/*
-        products.map((products)=>(
-           <ProductCard Productname={products.ProductName} Productprice={products.ProductPrice} isavailable={products.isavailable} />
-        )
-      )
-      }   */}
-      {/* {
-        post.map((post)=>(
-          <BlogPost  key={post.id} author={post.author} title={post.title} description={post.description}/>
-        ))
-      } */}
-
-
-
-    </div>
+    <div>{/*
+      <p>{count}</p>
+      <button onClick={handleIncrement}>Increment</button>
+      {/{ <p>I am  a Button</p>
+      <input type="text" name="myName" placeholder="Type your name" onChange={handleChange}/>
+      <button onClick={()=>handleClick("Syamala")}>Click me</button>
+}*/
+<form onSubmit={handleSubmit}>
+<input type="text" name="email" placeholder="Enter your email" onChange={handleChange} />
+<input type="password" name="password" placeholder="Enter your password" onChange={handleChange} />
+<button type="Submit">Login</button>
+</form> }
+    </div> 
   )
 }
-
-export default App
+export default App;
