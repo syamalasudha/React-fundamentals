@@ -11,7 +11,10 @@ function App() {
   
   return (
     <div className="maincontainer">
+      
       <ProductCard Productname="Laptop" Productprice="15000"  isavailable={true}/>
+      <ProductCard Productname="Laptop" Productprice="15000"  isavailable={false}/>
+
       <UserAvatar Name={name} course={course} RollNo={RollNo} bloodgroup={bloodgroup} DOB={DOB}/>
        <UserAvatar Name={name} course={course} RollNo={RollNo} bloodgroup={bloodgroup} DOB={DOB}/>
       
