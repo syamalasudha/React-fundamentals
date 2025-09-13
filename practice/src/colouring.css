@@ -1,0 +1,12 @@
+.details{
+    color:black;
+    border:2px solid black;
+    padding-left: 4px;
+}
+.name{
+    color:red;
+    text-align: center;
+}
+.content{
+    text-align: left;
+}

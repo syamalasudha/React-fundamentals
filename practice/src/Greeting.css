@@ -1,0 +1,17 @@
+.title{
+    color:black;
+    font-size: 20px;
+
+}
+.price{
+    color:blue;
+    font: size 15px;
+}
+.available{
+    color:green;
+    font-size: 15px;
+}
+.notavailable{
+    color:red;
+    font-size: 15px;
+}
